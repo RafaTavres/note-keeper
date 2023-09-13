@@ -20,14 +20,16 @@ export class EditarNotaComponent  implements OnInit{
     
     const id:number = parseInt(this.route.snapshot.paramMap.get('id')!);
 
-    this.nota = this.notaService.selecionarPorId(id)!;
+    this.notaService.selecionarPorId(id)!.subscribe((n) => {
+      this.nota = n;
+    });
   }
 
   editarNota(){
-    this.notaService.editar(this.nota);
+    this.notaService.editar(this.nota).subscribe((n) => {
+      this.toastSerivce.success('Nota Editda com Sucesso','Sucesso');
 
-    this.toastSerivce.success('Nota Editda com Sucesso','Sucesso');
-
-    this.router.navigate(['/notas','listar']);
+      this.router.navigate(['/notas','listar']);
+    });
   }
 }

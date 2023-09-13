@@ -10,8 +10,6 @@ export class Nota{
         this.titulo= titulo;
         this.conteudo= conteudo;
         this.tema= tema;
-
-
     }
 }
 

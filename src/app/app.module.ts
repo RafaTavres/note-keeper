@@ -12,15 +12,23 @@ import { CriarNotaComponent } from './components/notas/criar-nota/criar-nota.com
 import { EditarNotaComponent } from './components/notas/editar-nota/editar-nota.component';
 import { ExcluirNotaComponent } from './components/notas/excluir-nota/excluir-nota.component';
 import { ToastrModule } from 'ngx-toastr';
+import {HttpClientModule} from '@angular/common/http'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,NavbarComponent, ListarNotasComponent,CardNotaComponent,CriarNotaComponent, EditarNotaComponent, ExcluirNotaComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     NgbModule,
+
+
+
+
     ToastrModule.forRoot({
        timeOut:5000,
        positionClass:'toast-bottom-right',

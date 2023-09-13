@@ -18,13 +18,11 @@ export class CriarNotaComponent{
 
     criarNota(){
 
-        this.notaService.criar(this.nota);
+        this.notaService.criar(this.nota).subscribe((nota) => {
+            this.toastSerivce.success('Nota Criada com Sucesso','Sucesso');
 
-        this.toastSerivce.success('Nota Criada com Sucesso','Sucesso');
-
-        this.router.navigate(['/notas','listar']);
-      
-
+            this.router.navigate(['/notas','listar']);
+        });
     }
 
 }

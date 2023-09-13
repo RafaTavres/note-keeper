@@ -1,56 +1,35 @@
+import { HttpClient, HttpEvent } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable, ObservedValuesFromArray } from "rxjs";
 import { Nota } from "./Nota";
 
 @Injectable({
     providedIn:'root'
 })
 export class NotaService{
-  
 
-    notas: Nota[] = [
-        {
-          id: 0,
-          titulo: 'Lavar o cachorro 🦮',
-          conteudo: 'Pegar a toalha > Pegar o Shampoo',
-          tema:'dark'
-        },
-        {
-          id: 1,
-          titulo: 'Prepara Aula',
-          conteudo: 'Prerparar Jamboard',
-          tema:'warning'
-        },
-        {
-          id: 2,
-          titulo: 'AaAAAADAAAAAAAAAAAAAAAa',
-          conteudo: 'Testando os cards',
-          tema:'danger'
-        },
-      ];
+  private API_URL = 'http://localhost:3000/notas';
+ 
+  constructor(private http: HttpClient) {}
 
       criar(nota:Nota){
-        nota.id = this.notas.length;
-        this.notas.push(nota);
+        return this.http.post<Nota>(this.API_URL,nota);
       }
 
       editar(nota:Nota){
-        const idEdicao = this.notas.findIndex((n) => n.id == nota.id);
-
-        this.notas[idEdicao] = nota;
+        return this.http.put<Nota>(this.API_URL+`/${nota.id}`,nota);
       }
 
 
       deletar(nota:Nota){
-        const idDeletar = this.notas.findIndex((n) => n.id == nota.id);
-
-        this.notas.splice(idDeletar,1)
+        return this.http.delete<Nota>(this.API_URL+`/${nota.id}`);
       }
 
-      selecionarPorId(id:number):Nota | undefined{
-        return this.notas.find((nota) => nota.id == id);
+      selecionarPorId(id:number):Observable<Nota> | undefined{
+        return this.http.get<Nota>(this.API_URL+`/${id}`);
       }
 
-      selecionarTodos():Nota[]{
-        return this.notas;
+      selecionarTodos():Observable<Nota[]>{
+        return this.http.get<Nota[]>(this.API_URL);
       }
 }

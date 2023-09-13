@@ -20,14 +20,16 @@ export class ExcluirNotaComponent {
     
     const id:number = parseInt(this.route.snapshot.paramMap.get('id')!);
 
-    this.nota = this.notaService.selecionarPorId(id)!;
+    this.notaService.selecionarPorId(id)!.subscribe((n) => {
+      this.nota = n;
+    });
   }
 
   excluirNota(){
-    this.notaService.deletar(this.nota);
+    this.notaService.deletar(this.nota).subscribe((n) => {
+      this.toastSerivce.success('Nota Excluida com Sucesso','Sucesso');
 
-    this.toastSerivce.success('Nota Excluida com Sucesso','Sucesso');
-
-    this.router.navigate(['/notas','listar']);
+      this.router.navigate(['/notas','listar']);
+    });
   }
 }
