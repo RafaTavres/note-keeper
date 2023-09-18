@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListarNotasComponent } from './components/notas/listar-notas/listar-notas.component';
 import { CardNotaComponent } from './components/notas/card-nota/card-nota.component';
@@ -14,10 +14,16 @@ import { ExcluirNotaComponent } from './components/notas/excluir-nota/excluir-no
 import { ToastrModule } from 'ngx-toastr';
 import {HttpClientModule} from '@angular/common/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CriarCategoriasComponent } from './components/categorias/criar-categorias/criar-categorias.component';
+import { ListarCategoriasComponent } from './components/categorias/listar-categorias/listar-categorias.component';
+import { DropdownCategoriasComponent } from './components/notas/dropdown-categorias/dropdown-categorias.component';
+import { EditarCategoriasComponent } from './components/categorias/editar-categorias/editar-categorias.component';
+import { ExcluirCategoriasComponent } from './components/categorias/excluir-categorias/excluir-categorias.component';
+import { FiltrosPorCategoriasComponent } from './components/notas/filtros-por-categorias/filtros-por-categorias.component';
 
 @NgModule({
   declarations: [
-    AppComponent,NavbarComponent, ListarNotasComponent,CardNotaComponent,CriarNotaComponent, EditarNotaComponent, ExcluirNotaComponent],
+    AppComponent,NavbarComponent, ListarNotasComponent,CardNotaComponent,CriarNotaComponent, EditarNotaComponent, ExcluirNotaComponent, CriarCategoriasComponent, ListarCategoriasComponent, DropdownCategoriasComponent, EditarCategoriasComponent, ExcluirCategoriasComponent, FiltrosPorCategoriasComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

@@ -1,22 +1,43 @@
 {
-  "notas": [
+  "categorias": [
     {
       "id": 1,
-      "titulo": "Lavar o cachorro 🦮",
-      "conteudo": "Pegar o shampoo > pegar a toalha",
-      "tema": "warning"
+      "titulo": "CT1"
     },
     {
       "id": 2,
-      "titulo": "Planejar as Aulas de Angular",
-      "conteudo": "Pesquisar material",
-      "tema": "info"
+      "titulo": "CT2"
     },
     {
       "id": 3,
-      "titulo": "fd",
-      "conteudo": "utyututu",
-      "tema": "info"
+      "titulo": "CT3"
+    },
+    {
+      "id": 4,
+      "titulo": "CT4"
+    }
+  ],
+  "notas": [
+    {
+      "id": 1,
+      "titulo": "TITULO",
+      "conteudo": "ef",
+      "tema": "warning",
+      "categoriaId": 1
+    },
+    {
+      "id": 2,
+      "titulo": "fwef",
+      "conteudo": "fwef",
+      "tema": "info",
+      "categoriaId": 2
+    },
+    {
+      "id": 3,
+      "titulo": "TITULO",
+      "conteudo": "ewqe",
+      "tema": "info",
+      "categoriaId": 3
     }
   ]
 }

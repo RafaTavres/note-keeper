@@ -1,12 +1,14 @@
 import { HttpClient, HttpEvent } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable, ObservedValuesFromArray } from "rxjs";
-import { Nota } from "./Nota";
+import { Observable } from "rxjs";
+import { Categoria } from "../models/Categoria";
+import { Nota } from "../models/Nota";
 
 @Injectable({
     providedIn:'root'
 })
 export class NotaService{
+  
 
   private API_URL = 'http://localhost:3000/notas';
  
@@ -31,5 +33,9 @@ export class NotaService{
 
       selecionarTodos():Observable<Nota[]>{
         return this.http.get<Nota[]>(this.API_URL);
+      }
+
+      selecionarNotasPorCategoria(categoria: Categoria) {
+        return this.http.get<Nota[]>(this.API_URL+`?categoriaId=${categoria.id}`);
       }
 }

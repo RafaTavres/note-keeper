@@ -31,7 +31,18 @@
             rows="3"
           ></textarea>
         </div>
-  
+
+
+
+        <label for="categoria" class="form-label fs-5 fw-semibold">Categoria</label>      
+          <select (change)="selecionarCategoria($event)" name="" id="">
+            <option  *ngFor="let categoria of categorias" >
+              <app-dropdown-categorias [categoria]="categoria"></app-dropdown-categorias>
+            </option>
+          </select>
+
+
+
         <label for="tema" class="form-label fs-5 fw-semibold">Tema</label>
         <div>
           <div class="form-check form-check-inline">

@@ -10,6 +10,12 @@
         </button>
     </div>
 
+    <app-filtros-por-categorias
+    class="mb-3"
+    [categorias]="categorias"
+    (onFiltroSelecionado)="filtrarNotasPorCategoria($event)"
+    ></app-filtros-por-categorias>
+
     <div class="row g-3">
         <div *ngFor="let nota of notas" class="col-sm col-md-6 col-lg-3">
             <app-card-nota [nota]="nota"></app-card-nota>

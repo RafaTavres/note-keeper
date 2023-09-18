@@ -1,0 +1,42 @@
+<section class="row gap-3">
+    <h1>Minhas Categorias</h1>
+
+    <div>
+        <button routerLink="/categorias/criar" 
+                class="btn btn-lg btn-outline-primary mb-4 rounded-4"
+        >
+            <i class="bi bi-plus-circle"></i>
+            Criar Categoria
+        </button>
+    </div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col-2">Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let cate of categorias">
+                    <th scope="row">{{ cate.id }}</th>
+                    <td>{{ cate.titulo}}</td>
+                    <td>
+                        <button routerLink="/categorias/editar/{{cate.id}}" class="btn btn-lg btn-outline-warning mb-4 rounded-4">
+                        <i class="bi bi-pencil"></i>
+                            Editar
+                        </button>
+                        <button routerLink="/categorias/excluir/{{cate.id}}" class="btn btn-lg btn-outline-danger mb-4 rounded-4">
+                            <i class="bi bi-eraser-fill"></i>
+                                Deletar
+                            </button>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+      
+
+</section>

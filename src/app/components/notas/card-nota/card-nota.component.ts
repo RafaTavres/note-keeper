@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { Nota } from '../Nota';
-import { NotaService } from '../notas.service';
+import { Nota } from 'src/app/models/Nota';
+import { NotaService } from '../../../services/notas.service';
 
 @Component({
   selector: 'app-card-nota',
@@ -14,6 +14,7 @@ export class CardNotaComponent {
     titulo: '',
     conteudo: '',
     tema: 'dark',
+    categoriaId:1
   };
 
   constructor(private notaService:NotaService,private router:Router) {}
