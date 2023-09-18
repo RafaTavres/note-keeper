@@ -13,7 +13,7 @@ export class ExcluirNotaComponent {
   nota:Nota;
   
   constructor(private toastSerivce:ToastrService,private route: ActivatedRoute,private notaService:NotaService,private router:Router){
-    this.nota = new Nota('','','dark',0,1);
+    this.nota = new Nota('','','dark',0,1,false);
   }
 
   ngOnInit(): void {

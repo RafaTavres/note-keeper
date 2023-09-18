@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Categoria } from 'src/app/models/Categoria';
 import { Nota } from 'src/app/models/Nota';
 import { CategoriaService } from 'src/app/services/categorias.service';
-import { NotaService } from '../../../services/notas.service';
+import { NotaService } from 'src/app/services/notas.service';
 
 @Component({
-  selector: 'app-listar-notas',
-  templateUrl: './listar-notas.component.html',
-  styleUrls: ['./listar-notas.component.css']
+  selector: 'app-arquivar-notas',
+  templateUrl: './arquivar-notas.component.html',
+  styleUrls: ['./arquivar-notas.component.css']
 })
-export class ListarNotasComponent implements OnInit{
+export class ArquivarNotasComponent implements OnInit{
   notas: Nota[] = [];
   categorias: Categoria[];
 
@@ -22,27 +22,28 @@ export class ListarNotasComponent implements OnInit{
 
   ngOnInit(): void {
     
-    this.selecionarTodasNotas();
+    this.selecionarTodasNotasArquivadas();
   }
 
   filtrarNotasPorCategoria(categoria:Categoria | null){
     if(categoria == null){
-      this.selecionarTodasNotas();
+      this.selecionarTodasNotasArquivadas();
       return;
     }
 
-    this.selecionarNotasPorCategoria(categoria);
+    this.selecionarNotasArquivadasPorCategoria(categoria);
   }
 
-  selecionarTodasNotas(){
-    this.notaService.selecionarTodos().subscribe((notas) => {
+  selecionarTodasNotasArquivadas(){
+    this.notaService.selecionarTodosArquivados().subscribe((notas) => {
       this.notas = notas
     });
   }
 
-  selecionarNotasPorCategoria(categoria: Categoria){
-    this.notaService.selecionarNotasPorCategoria(categoria).subscribe((notas) =>{
+  selecionarNotasArquivadasPorCategoria(categoria: Categoria){
+    this.notaService.selecionarNotasArquivadasPorCategoria(categoria).subscribe((notas) =>{
       this.notas = notas;
     })
   }
 }
+

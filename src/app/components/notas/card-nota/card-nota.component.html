@@ -1,4 +1,4 @@
-<div class="card h-100 border-{{ nota.tema }}">
+<div *ngIf="nota.arquivada == true" class="card h-100 border-dark bg-dark bg-opacity-50 ">
     <div class="card-body">
       <div class="d-flex align-items-center">
         <h5 class="card-title">{{ nota.titulo }}</h5>
@@ -9,19 +9,77 @@
     <div class="d-flex gap-1 justify-content-end card-footer bg-transparent">
       
       
-      
+
+      <button
+        (click)="DesarquivarNota(nota)"
+        class="btn btn-outline-dark"
+        aria-label="Desarquivar"
+        ngbTooltip="Desarquivar"
+        placement="bottom"
+      >
+        <i class="bi bi-folder-fill"></i>
+      </button>
+
       <button
         routerLink="/notas/editar/{{nota.id}}"
-        class="btn btn-outline-{{ nota.tema }}"
+        class="btn btn-outline-dark"
         aria-label="Editar"
         ngbTooltip="Editar"
         placement="bottom"
       >
         <i class="bi bi-pen"></i>
       </button>
+
       <button
         routerLink="/notas/excluir/{{nota.id}}"
-        class="btn btn-outline-{{ nota.tema }}"
+        class="btn btn-outline-dark"
+        aria-label="Excluir"
+        ngbTooltip="Excluir"
+        placement="bottom"
+      >
+        <i class="bi bi-trash"></i>
+      </button>
+
+
+
+    </div>
+  </div>
+
+  <div *ngIf="nota.arquivada == false" class="card h-100 border-{{ nota.tema }} bg-{{ nota.tema }}  bg-opacity-50 ">
+    <div class="card-body">
+      <div class="d-flex align-items-center">
+        <h5 class="card-title">{{ nota.titulo }}</h5>
+        <span class="ms-auto fw-semibold text-muted">Id: {{ nota.id }}</span>
+      </div>
+      <p class="card-text my-4">{{ nota.conteudo }}</p>
+    </div>
+    <div class="d-flex gap-1 justify-content-end card-footer bg-transparent">
+      
+      
+
+      <button
+        (click)="ArquivarNota(nota)"
+        class="btn btn-outline-dark"
+        aria-label="Arquivar"
+        ngbTooltip="Arquivar"
+        placement="bottom"
+      >
+        <i class="bi bi-folder"></i>
+      </button>
+
+      <button
+        routerLink="/notas/editar/{{nota.id}}"
+        class="btn btn-outline-dark"
+        aria-label="Editar"
+        ngbTooltip="Editar"
+        placement="bottom"
+      >
+        <i class="bi bi-pen"></i>
+      </button>
+
+      <button
+        routerLink="/notas/excluir/{{nota.id}}"
+        class="btn btn-outline-dark"
         aria-label="Excluir"
         ngbTooltip="Excluir"
         placement="bottom"

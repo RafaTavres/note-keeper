@@ -32,10 +32,18 @@ export class NotaService{
       }
 
       selecionarTodos():Observable<Nota[]>{
-        return this.http.get<Nota[]>(this.API_URL);
+        return this.http.get<Nota[]>(this.API_URL+`?arquivada=false`);
+      }
+
+      selecionarTodosArquivados():Observable<Nota[]>{
+        return this.http.get<Nota[]>(this.API_URL+`?arquivada=true`);
+      }
+      
+      selecionarNotasArquivadasPorCategoria(categoria: Categoria) {
+        return this.http.get<Nota[]>(this.API_URL+`?arquivada=true`+`&categoriaId=${categoria.id}`);
       }
 
       selecionarNotasPorCategoria(categoria: Categoria) {
-        return this.http.get<Nota[]>(this.API_URL+`?categoriaId=${categoria.id}`);
+        return this.http.get<Nota[]>(this.API_URL+`?arquivada=false`+`&categoriaId=${categoria.id}`);
       }
 }

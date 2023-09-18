@@ -18,7 +18,7 @@ export class CriarNotaComponent implements OnInit{
     categorias:Categoria[];
       
     constructor(private categoriaService:CategoriaService,private toastSerivce:ToastrService,private notaService:NotaService,private router:Router){
-       this.nota = new Nota('','','dark',0,10);   
+       this.nota = new Nota('','','dark',0,10,false);   
        this.categorias = [];
        this.categoriaService.selecionarTodos().subscribe((categorias) =>{
         this.categorias = categorias

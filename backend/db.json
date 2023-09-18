@@ -2,42 +2,21 @@
   "categorias": [
     {
       "id": 1,
-      "titulo": "CT1"
+      "titulo": "Categoria1"
     },
     {
       "id": 2,
-      "titulo": "CT2"
-    },
-    {
-      "id": 3,
-      "titulo": "CT3"
-    },
-    {
-      "id": 4,
-      "titulo": "CT4"
+      "titulo": "Categoria2"
     }
   ],
   "notas": [
     {
       "id": 1,
-      "titulo": "TITULO",
-      "conteudo": "ef",
-      "tema": "warning",
-      "categoriaId": 1
-    },
-    {
-      "id": 2,
-      "titulo": "fwef",
-      "conteudo": "fwef",
+      "titulo": "TITULO1",
+      "conteudo": "1",
       "tema": "info",
-      "categoriaId": 2
-    },
-    {
-      "id": 3,
-      "titulo": "TITULO",
-      "conteudo": "ewqe",
-      "tema": "info",
-      "categoriaId": 3
+      "categoriaId": 1,
+      "arquivada": false
     }
   ]
 }

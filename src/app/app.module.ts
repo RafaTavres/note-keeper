@@ -20,10 +20,11 @@ import { DropdownCategoriasComponent } from './components/notas/dropdown-categor
 import { EditarCategoriasComponent } from './components/categorias/editar-categorias/editar-categorias.component';
 import { ExcluirCategoriasComponent } from './components/categorias/excluir-categorias/excluir-categorias.component';
 import { FiltrosPorCategoriasComponent } from './components/notas/filtros-por-categorias/filtros-por-categorias.component';
+import { ArquivarNotasComponent } from './components/notas/arquivar-notas/arquivar-notas.component';
 
 @NgModule({
   declarations: [
-    AppComponent,NavbarComponent, ListarNotasComponent,CardNotaComponent,CriarNotaComponent, EditarNotaComponent, ExcluirNotaComponent, CriarCategoriasComponent, ListarCategoriasComponent, DropdownCategoriasComponent, EditarCategoriasComponent, ExcluirCategoriasComponent, FiltrosPorCategoriasComponent],
+    AppComponent,NavbarComponent, ListarNotasComponent,CardNotaComponent,CriarNotaComponent, EditarNotaComponent, ExcluirNotaComponent, CriarCategoriasComponent, ListarCategoriasComponent, DropdownCategoriasComponent, EditarCategoriasComponent, ExcluirCategoriasComponent, FiltrosPorCategoriasComponent, ArquivarNotasComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

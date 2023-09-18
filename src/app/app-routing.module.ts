@@ -4,6 +4,7 @@ import { CriarCategoriasComponent } from './components/categorias/criar-categori
 import { EditarCategoriasComponent } from './components/categorias/editar-categorias/editar-categorias.component';
 import { ExcluirCategoriasComponent } from './components/categorias/excluir-categorias/excluir-categorias.component';
 import { ListarCategoriasComponent } from './components/categorias/listar-categorias/listar-categorias.component';
+import { ArquivarNotasComponent } from './components/notas/arquivar-notas/arquivar-notas.component';
 import { CriarNotaComponent } from './components/notas/criar-nota/criar-nota.component';
 import { EditarNotaComponent } from './components/notas/editar-nota/editar-nota.component';
 import { ExcluirNotaComponent } from './components/notas/excluir-nota/excluir-nota.component';
@@ -31,6 +32,10 @@ const routes: Routes = [
     path: 'notas/excluir/:id',
     component: ExcluirNotaComponent,
   },
+  {
+    path: 'notas/arquivados',
+    component: ArquivarNotasComponent,
+  },
 
 
 
@@ -52,6 +57,7 @@ const routes: Routes = [
     path: 'categorias/excluir/:id',
     component: ExcluirCategoriasComponent,
   },
+  
 ];
 
 @NgModule({
