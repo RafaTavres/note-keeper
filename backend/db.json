@@ -1,22 +1,4 @@
 {
-  "categorias": [
-    {
-      "id": 1,
-      "titulo": "Categoria1"
-    },
-    {
-      "id": 2,
-      "titulo": "Categoria2"
-    }
-  ],
-  "notas": [
-    {
-      "id": 1,
-      "titulo": "TITULO1",
-      "conteudo": "1",
-      "tema": "info",
-      "categoriaId": 1,
-      "arquivada": false
-    }
-  ]
+  "categorias": [],
+  "notas": []
 }

@@ -35,10 +35,8 @@
 
 
         <label for="categoria" class="form-label fs-5 fw-semibold">Categoria</label>      
-          <select (change)="selecionarCategoria($event)" name="" id="">
-            <option  *ngFor="let categoria of categorias" >
-              <app-dropdown-categorias [categoria]="categoria"></app-dropdown-categorias>
-            </option>
+          <select [(ngModel)]="nota.categoriaId" name="categoriaId" id="">
+            <option  [ngValue]="categoria.id" *ngFor="let categoria of categorias" >{{categoria.titulo}}</option>
           </select>
 
 

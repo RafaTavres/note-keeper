@@ -20,25 +20,16 @@ export class CriarNotaComponent implements OnInit{
     constructor(private categoriaService:CategoriaService,private toastSerivce:ToastrService,private notaService:NotaService,private router:Router){
        this.nota = new Nota('','','dark',0,10,false);   
        this.categorias = [];
-       this.categoriaService.selecionarTodos().subscribe((categorias) =>{
-        this.categorias = categorias
-       });    
+          
     }
+
     ngOnInit(): void {
-        this.categoriaPadrao();
+        this.categoriaService.selecionarTodos().subscribe((categorias) =>{
+            this.categorias = categorias
+            console.log(categorias);
+        }); 
     }
     
-
-    selecionarCategoria(event:Event){
-        let row = event.target as HTMLSelectElement;
-        let index:number = row.selectedIndex + 1;
-        this.categoriaService.selecionarPorId(index)?.subscribe((categoria)=>{
-            this.nota.categoriaId = categoria.id!;
-        });
-    }
-    categoriaPadrao(){
-        this.nota.categoriaId = 1;
-    }
 
     criarNota(){
         console.log(this.nota)
