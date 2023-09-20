@@ -1,6 +1,7 @@
 import { HttpClient, HttpEvent } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { environment } from "src/environments/environment";
 import { Categoria } from "../models/Categoria";
 import { Nota } from "../models/Nota";
 
@@ -10,7 +11,7 @@ import { Nota } from "../models/Nota";
 export class NotaService{
   
 
-  private API_URL = 'http://localhost:3000/notas';
+  private API_URL = `${environment.API_URL}/api/notas`;
  
   constructor(private http: HttpClient) {}
 
